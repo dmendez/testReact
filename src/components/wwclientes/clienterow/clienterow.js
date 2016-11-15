@@ -1,10 +1,7 @@
 import React from "react";
 import template from "./clienterow.jsx";
-
 import * as actions from '../../../actions';
-
-import configureStore from '../../../store/configureStore';
-const store = configureStore();
+import { browserHistory } from 'react-router';
 
 class clienterow extends React.Component {
   render() {
@@ -12,14 +9,19 @@ class clienterow extends React.Component {
   }
 
   editClient(evt, cliente) {
-      store.dispatch(actions.editCliente( evt, cliente));
-      store.dispatch(actions.navigateCliente( evt));
+    let store = this.context.store;
+    browserHistory.push('/cliente');
+    store.dispatch(actions.editCliente( evt, cliente));
   }
 
   deleteClient(evt, cliente) {
-      store.dispatch(actions.deleteCliente( evt, cliente));
-      store.dispatch(actions.navigateCliente( evt));
+      browserHistory.push('/cliente');
+      this.props.store.dispatch(actions.deleteCliente( evt, cliente));
   }
 }
+
+clienterow.contextTypes = {
+  store: React.PropTypes.object
+};
 
 export default clienterow;
