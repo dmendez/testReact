@@ -1,7 +1,7 @@
-import ClientsMaster from './clientsmaster';
-import ClientDatail from './clientdetail';
+import ClientesMasterContainer from './clientsmaster';
+import ClientDatailContainer from './clientdetail';
 
 export {
-  ClientsMaster,
-  ClientDatail,
+  ClientesMasterContainer,
+  ClientDatailContainer,
 };

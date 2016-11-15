@@ -14,12 +14,11 @@ function template() {
       </Header.Subheader>
       </Header>
       <Form className="form-horizontal">
-        <Form.Input id="CLIENTID" defaultValue={this.props.id} size="mini" type='text' label="Id" placeholder='Id' />
-        <Form.Input id="CLIENTNAME" defaultValue="" size="small" type='text' label="Nombre" placeholder='Nombre' />
-        <img id="CLIENTIMAGE" src={this.props.image} alt="Player's picture" />
+        <Form.Input id="CLIENTID" defaultValue={this.props.cliente.id} size="mini" type='text' label="Id" placeholder='Id' />
+        <Form.Input id="CLIENTNAME" defaultValue={this.props.cliente.nombre} size="small" type='text' label="Nombre" placeholder='Nombre' />
         <Form.Input labelPosition='right'>
           <Label basic>$</Label>
-            <Input id="CLIENTBALANCE" label="Saldo" type='small' placeholder='Saldo' />
+            <Input defaultValue={this.props.cliente.balance} id="CLIENTBALANCE" label="Saldo" type='small' placeholder='Saldo' />
               <Label>.00</Label>
         </Form.Input>
         <Grid>

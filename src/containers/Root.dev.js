@@ -1,15 +1,15 @@
 import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
-import { Route, Router, IndexRedirect } from 'react-router';
+import { Route, Router } from 'react-router';
 import App from '../App';
-import {ClientsMaster, ClientDatail} from '../containers';
+import {ClientesMasterContainer, ClientDatailContainer} from '../containers';
 
 const Root = ({ store, history }) => (
   <Provider store={store}>
     <Router history={history}>
     <Route path="/" component={App}/>
-    <Route path="cliente" component={ClientDatail}/>
-    <Route path="wwclientes" component={ClientsMaster}/>
+    <Route path="cliente" component={ClientDatailContainer}/>
+    <Route path="wwclientes" component={ClientesMasterContainer}/>
     </Router>
   </Provider>
 );

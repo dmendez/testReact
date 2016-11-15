@@ -5,24 +5,17 @@ import Cliente from '../components/cliente/cliente';
 
 class ClientDatailContainer extends React.Component{
 
-  constructor(props, context) {
-    super(props, context);
-    this.state = {cliente:{}};
-  }
-
   render() {
-    return (
-      <Cliente actions={{editCliente: this.props.editCliente, deleteCliente: this.props.deleteCliente}}/>
-    );
+    return (<Cliente />);
   }
 }
+
 
 ClientDatailContainer.contextTypes ={
   router: React.PropTypes.object
 };
 
 const mapStateToProps = state => {
-  debugger;
   return {
     cliente: state.userActions.cliente,
     id: state.userActions.cliente.id,

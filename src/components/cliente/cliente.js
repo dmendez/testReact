@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import template from "./cliente.jsx";
+import { connect } from 'react-redux';
 
 class Cliente extends Component {
   render() {
@@ -7,4 +8,13 @@ class Cliente extends Component {
   }
 }
 
-export default Cliente;
+const mapStateToProps = state => {
+  return {
+    cliente: state.userActions.cliente,
+  };
+};
+
+
+export default connect(
+  mapStateToProps
+)(Cliente);

@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import merge from 'lodash/merge';
-import { browserHistory } from 'react-router';
 import * as actions from '../actions';
 
 // Guarda una entidad obtenida de la api (response.entities) en el state (caso github),
@@ -13,22 +12,18 @@ function entities(state = { user: {} }, action) {
   return state;
 }
 
-function userActions(state = {cliente: {}}, action) {
+function userActions(state = {}, action) {
   switch (action.type) {
     case actions.EDIT_CLIENTE:
-    debugger;
-      return merge({...state}, {
-        gxMode: 'EDT',
-        cliente: {...action.cliente}
-      });
+        return {...state,
+                gxMode: 'EDT',
+                cliente: {...action.cliente}
+        };
     case actions.DELETE_CLIENTE:
-        return merge({...state}, {
-          gxMode: 'DLT',
-          cliente: {...action.cliente}
-        });
-    case actions.NAVIGATE_CLIENTE:
-        browserHistory.push('/cliente');
-        return {...state};
+      return {...state,
+            gxMode: 'DLT',
+            cliente: {...action.cliente}
+      };
     default:
       return state;
   }
