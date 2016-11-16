@@ -16,10 +16,14 @@ ClientDatailContainer.contextTypes ={
 };
 
 const mapStateToProps = state => {
+  if (state.userActions.cliente){
   return {
     cliente: state.userActions.cliente,
     id: state.userActions.cliente.id,
   };
+}
+else //cuando vuelve no hay cliente
+  return {};
 };
 
 function mapDispatchToProps(dispatch) {

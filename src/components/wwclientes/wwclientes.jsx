@@ -21,6 +21,7 @@ function template() {
          <Table.HeaderCell>Codigo</Table.HeaderCell>
          <Table.HeaderCell>Foto</Table.HeaderCell>
          <Table.HeaderCell>Nombre</Table.HeaderCell>
+         <Table.HeaderCell>Balance</Table.HeaderCell>
        </Table.Row>
      </Table.Header>
 

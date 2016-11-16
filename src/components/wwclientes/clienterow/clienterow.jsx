@@ -10,8 +10,11 @@ function template() {
         <Button onClick={(e) => this.deleteClient(e,this.props.cliente)} label='borrar' circular icon='remove'/>
       </Table.Cell>
       <Table.Cell textAlign='center'>{this.props.cliente.id}</Table.Cell>
-      <Table.Cell><Image alt="Foto del cliente" size="mini" shape="circular" centered src={this.props.cliente.imagen}/></Table.Cell>
+      <Table.Cell>
+        <Image alt="Foto del cliente" size="mini" shape="circular" centered src={this.props.cliente.imagen}/>
+      </Table.Cell>
       <Table.Cell textAlign='left'>{this.props.cliente.nombre}</Table.Cell>
+      <Table.Cell textAlign='right'>$ {this.props.cliente.balance}.00</Table.Cell>
     </Table.Row>
   );
 };
