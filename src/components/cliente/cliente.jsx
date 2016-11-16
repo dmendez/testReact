@@ -4,6 +4,9 @@ import { Grid, Form, Header, Icon, Button, Label, Input, Image} from 'semantic-u
 import { browserHistory  } from 'react-router';
 
 function template() {
+  if (!this.props.cliente)
+    return <h1>Shit happens! :(</h1>
+    
   return (
   <div className="container">
     <Header as='h2' icon>
