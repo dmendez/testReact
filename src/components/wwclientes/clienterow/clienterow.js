@@ -1,7 +1,6 @@
 import React from "react";
 import template from "./clienterow.jsx";
 import * as actions from '../../../actions';
-import { browserHistory } from 'react-router';
 
 class clienterow extends React.Component {
   render() {
@@ -10,18 +9,22 @@ class clienterow extends React.Component {
 
   editClient(evt, cliente) {
     let store = this.context.store;
-    browserHistory.push('/cliente');
+    let router = this.context.router;
+    router.push('/cliente');
     store.dispatch(actions.editCliente( evt, cliente));
   }
 
   deleteClient(evt, cliente) {
-      browserHistory.push('/cliente');
-      this.props.store.dispatch(actions.deleteCliente( evt, cliente));
+    let store = this.context.store;
+    let router = this.context.router;
+    router.push('/cliente');
+    store.dispatch(actions.deleteCliente( evt, cliente));
   }
 }
 
 clienterow.contextTypes = {
-  store: React.PropTypes.object
+  store: React.PropTypes.object,
+  router: React.PropTypes.object
 };
 
 export default clienterow;
