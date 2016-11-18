@@ -12,8 +12,12 @@ function entities(state = { user: {} }, action) {
   return state;
 }
 
-function userActions(state = {cliente:{ id: 0, nombre:'', imagen:'', balance:0}}, action) {
+function userActions(state = {cliente:{ CliId: 0, Clinombre:'', Cliimagen:'', Clibalance:0}}, action) {
   switch (action.type) {
+    case actions.FETCH_CLIENTE:
+        return {...state,
+                cliente: {...action.cliente}
+        };
     case actions.EDIT_CLIENTE:
         return {...state,
                 gxMode: 'EDT',

@@ -10,7 +10,7 @@ class clienterow extends React.Component {
   editClient(evt, cliente) {
     let store = this.context.store;
     let router = this.context.router;
-    router.push('/cliente');
+    router.push(`/cliente/${cliente.CliId}`);
     store.dispatch(actions.editCliente( evt, cliente));
   }
 
