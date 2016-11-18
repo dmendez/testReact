@@ -1,4 +1,3 @@
-import "./wwclientes.css";
 import React from "react";
 import { Table, Header, Icon} from 'semantic-ui-react'
 import Clienterow from "./clienterow/clienterow";

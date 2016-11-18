@@ -1,4 +1,3 @@
-import "./cliente.css";
 import React from "react";
 import { Grid, Form, Header, Icon, Button, Label, Input, Image} from 'semantic-ui-react';
 import { browserHistory  } from 'react-router';

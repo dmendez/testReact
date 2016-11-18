@@ -1,4 +1,3 @@
-import "./clienterow.css";
 import React from "react";
 import { Image, Table, Button } from 'semantic-ui-react'
 
