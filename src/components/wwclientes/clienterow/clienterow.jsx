@@ -3,7 +3,7 @@ import { Image, Table, Button } from 'semantic-ui-react'
 
 function template() {
   return (
-    <Table.Row>
+    <Table.Row key={this.props.cliente.id}>
       <Table.Cell textAlign='center'>
         <Button onClick={(e) => this.editClient(e,this.props.cliente)} label='editar' circular icon='file'/>
         <Button onClick={(e) => this.deleteClient(e,this.props.cliente)} label='borrar' circular icon='remove'/>

@@ -15,13 +15,13 @@ function template() {
       </Header.Subheader>
       </Header>
       <Form className="form-horizontal">
-        <Form.Input id="CLIENTID" value={this.props.cliente.CliId || ''} size="mini" type='text' label="Id" placeholder='Id' />
-        <Form.Input id="CLIENTNAME" value={this.props.cliente.CliNombre || ''} size="small" type='text' label="Nombre" placeholder='Nombre' />
-        <Image size="mini" shape="circular" src={this.props.cliente.CliImage || ''} />
+        <Label id="CLIENTID">CliId: {this.props.cliente.CliId}</Label>
+        <Form.Input id="CLIENTNAME" value={this.props.cliente.CliNombre} onChange={this.handleNameChange.bind(this)} size="small" type='text' label="Nombre" placeholder='Nombre' />
+        <Image size="mini" shape="circular" src={this.props.cliente.CliImage} />
         No! you can't change the image right now
         <Form.Input labelPosition='right'>
           <Label basic>$</Label>
-            <Input value={this.props.cliente.CliBalance || ''} id="CLIENTBALANCE" label="Saldo" type='small' placeholder='Saldo' />
+            <Input id="CLIENTBALANCE" value={this.props.cliente.CliBalance} onChange={this.handleBalanceChange.bind(this)} label="Saldo" type='small' placeholder='Saldo' />
             <Label>.00</Label>
         </Form.Input>
         <Grid>
@@ -37,5 +37,7 @@ function template() {
     </div>
   );
 };
+
+
 
 export default template;

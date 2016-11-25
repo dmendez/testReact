@@ -19,6 +19,10 @@ function userActions(state = {cliente:{ CliId: 0, CliNombre:'', CliImage:'', Cli
             gxMode: 'DLT',
             cliente: {...action.cliente}
       };
+      case actions.CLIENT_DATA_CHANGED:
+      return {...state,
+        cliente: Object.assign({...state.cliente}, action.cliente)
+      };
     default:
       return state;
   }

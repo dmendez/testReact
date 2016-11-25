@@ -26,8 +26,8 @@ function template() {
 
       <Table.Body>
       {
-        this.state.clientes.map( function(i) {
-          return <Clienterow key={i.id} cliente={i} />;
+        this.state.clientes.map(function(i) {
+          return <Clienterow key={i.CliId} cliente={i} />;
           })
       }
       </Table.Body>
