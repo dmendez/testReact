@@ -24,16 +24,16 @@ function template() {
             <Input id="CLIENTBALANCE" value={this.props.cliente.CliBalance} onChange={this.handleBalanceChange.bind(this)} label="Saldo" type='small' placeholder='Saldo' />
             <Label>.00</Label>
         </Form.Input>
+        </Form>
         <Grid>
           <Grid.Row centered>
             <Button.Group>
-              <Button onClick={browserHistory.goBack} >Cancel</Button>
+              <Button onClick={browserHistory.goBack}>Cancelar</Button>
               <Button.Or />
-              <Button positive>Guardar</Button>
+              <Button positive onClick={this.handleSave.bind(this)} >Guardar</Button>
             </Button.Group>
           </Grid.Row>
         </Grid>
-        </Form>
     </div>
   );
 };

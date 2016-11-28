@@ -27,7 +27,7 @@ class Cliente extends React.Component {
 
   clientChanged(evt, client) {
     let store = this.context.store;
-    let router = this.context.router;
+   // let router = this.context.router;
     store.dispatch(actions.dataChanged( evt, client));
   }
 
@@ -41,6 +41,9 @@ class Cliente extends React.Component {
     this.clientChanged(evt, {CliId: this.props.cliente.CliId, CliBalance: evt.target.value });
   }
   
+  handleSave(evt){
+    alert('Saving');
+  }
 }
 
 Cliente.contextTypes = {
