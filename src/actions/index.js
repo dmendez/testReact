@@ -2,6 +2,7 @@ export const EDIT_CLIENTE = 'EDIT_CLIENTE'
 export const FETCH_CLIENTE = 'FETCH_CLIENTE'
 export const DELETE_CLIENTE = 'DELETE_CLIENTE'
 export const SAVE_CLIENTE_CMD = 'SAVE_CLIENTE_CMD'
+export const UPDATE_CLIENTE = 'UPDATE_CLIENTE'
 export const CLIENT_DATA_CHANGED = 'CLIENT_DATA_CHANGED'
 export const CLIENTES_FETCHED = 'CLIENTES_FETCHED'
 
@@ -33,4 +34,9 @@ export const dataChanged = (evt, cliente) => ({
 export const clientsFetched = (clientes) => ({
   type: CLIENTES_FETCHED,
   clientes
+})
+
+export const updateClient = (cliente) => ({
+  type: UPDATE_CLIENTE,
+  cliente
 })

@@ -1,14 +1,14 @@
-import React    from "react";
+import React from "react";
 import template from "./wwclientes.jsx";
 import { connect } from 'react-redux';
-import { clientsFetched } from '../../actions/index.js';
 import 'isomorphic-fetch';
 import * as actions from '../../actions';
+import webExecute from '../../common/DataProvidersCalls'
 
 class wwclientes extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { clientes: []  }
+    this.state = { clientes: [] }
   }
 
   render() {
@@ -16,28 +16,18 @@ class wwclientes extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://apps5.genexus.com/Idf4576a6f5b3608c3059b0da155c3dfe4/rest/workwithdevicescliente_cliente_list_grid1'
-    ).then(response => {
-        if (response.ok)
-          return response.json();
-        else{
-          Promise.reject('response not ok');
-        }
-    }).then((data) => {
-      console.log('about to setState')
-      this.clientsFetched(data)
-      //this.setState( {...this.state, clientes:data})
+    webExecute('GET', 'workwithdevicescliente_cliente_list_grid1').then((data) => {
+      this.clientsFetched(data);
     })
-  .catch( error => {
-    console.log(error);
-    alert('FUCK!');
-    alert(error);
-  });
+      .catch(error => {
+        console.log(error);
+        alert('FUCK!');
+        alert(error);
+      })
   }
 
   clientsFetched(clients) {
     let store = this.context.store;
-   // let router = this.context.router;
     store.dispatch(actions.clientsFetched(clients));
   }
 
@@ -58,6 +48,5 @@ const mapStateToProps = state => {
 
 
 export default connect(
-  mapStateToProps,
-  { clientsFetched }
+  mapStateToProps
 )(wwclientes);
