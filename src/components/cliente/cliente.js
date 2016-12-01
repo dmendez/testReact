@@ -44,7 +44,6 @@ class Cliente extends React.Component {
   }
 
   saveBC() {
-    let store = this.context.store;
     let router = this.context.router;
     webExecute('PUT', 'Cliente/' + this.props.cliente.CliId, JSON.stringify(this.props.cliente))
       .then(() => router.goBack())
