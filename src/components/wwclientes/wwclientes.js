@@ -21,7 +21,6 @@ class wwclientes extends React.Component {
     })
       .catch(error => {
         console.log(error);
-        alert('FUCK!');
         alert(error);
       })
   }

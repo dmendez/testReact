@@ -14,6 +14,10 @@ function userActions(state = { cliente: { CliId: 0, CliNombre: '', CliImage: '',
         gxMode: 'EDT',
         cliente: {...action.cliente }
       };
+    case actions.VIEW_CLIENTE:
+      return {...state,
+        cliente: {...action.cliente }
+      };
     case actions.DELETE_CLIENTE:
       return {...state,
         gxMode: 'DLT',

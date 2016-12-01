@@ -16,7 +16,6 @@ function template() {
       <Table celled structured>
       <Table.Header>
         <Table.Row  textAlign='center'>
-         <Table.HeaderCell></Table.HeaderCell>
          <Table.HeaderCell>Codigo</Table.HeaderCell>
          <Table.HeaderCell>Foto</Table.HeaderCell>
          <Table.HeaderCell>Nombre</Table.HeaderCell>

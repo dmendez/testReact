@@ -7,18 +7,12 @@ class clienterow extends React.Component {
     return template.call(this);
   }
 
-  editClient(evt, cliente) {
-    let store = this.context.store;
-    let router = this.context.router;
-    router.push(`/cliente/${cliente.CliId}`);
-    store.dispatch(actions.editCliente( evt, cliente));
-  }
 
-  deleteClient(evt, cliente) {
+ viewClient(evt, cliente) {
     let store = this.context.store;
     let router = this.context.router;
-    router.push('/cliente');
-    store.dispatch(actions.deleteCliente( evt, cliente));
+    router.push(`/viewcliente/${cliente.CliId}`);
+    store.dispatch(actions.viewClient( evt, cliente));
   }
 }
 

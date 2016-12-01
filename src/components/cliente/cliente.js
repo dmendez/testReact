@@ -14,7 +14,6 @@ class Cliente extends React.Component {
       .then(data => store.dispatch(actions.fetchCliente(data)))
       .catch(error => {
         console.log(error);
-        alert('FUCK!');
         alert(error);
       });
   }

@@ -1,4 +1,5 @@
 export const EDIT_CLIENTE = 'EDIT_CLIENTE'
+export const VIEW_CLIENTE = 'VIEW_CLIENTE'
 export const FETCH_CLIENTE = 'FETCH_CLIENTE'
 export const DELETE_CLIENTE = 'DELETE_CLIENTE'
 export const SAVE_CLIENTE_CMD = 'SAVE_CLIENTE_CMD'
@@ -13,6 +14,11 @@ export const fetchCliente = (cliente) => ({
 
 export const editCliente = (evt, cliente) => ({
   type: EDIT_CLIENTE,
+  cliente
+})
+
+export const viewCliente = (evt, cliente) => ({
+  type: VIEW_CLIENTE,
   cliente
 })
 
